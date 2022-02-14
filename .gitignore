@@ -13,3 +13,4 @@ cleaned_data/cleaned_reviews_2.csv
 /word2vec.model
 /word2vec.txt
 /GoogleNews-vectors-negative300.bin
+others/IMDB Dataset.csv
