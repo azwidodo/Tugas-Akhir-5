@@ -6,8 +6,11 @@ all_data/goodreads_reviews_young_adult.json
 all_data/all_reviews.csv
 all_data/reviews_filtered.csv
 all_data/reviews_filtered_2.csv
+all_data/ppt_filtered.csv
+all_data/ppt_processed.csv
 cleaned_data/cleaned_reviews.csv
 cleaned_data/cleaned_reviews_2.csv
+cleaned_data/cleaned_reviews_3.csv
 /glove.42B.300d.txt
 /weights.best.hdf5
 /word2vec.model
