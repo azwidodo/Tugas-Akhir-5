@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import matplotlib.pyplot as plt
+from collections import Counter
 
 # Split training data by sentiment
 
@@ -46,3 +47,41 @@ def plot_history(history):
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left')
     plt.show()
+
+
+# Construct vocab using Glove
+def vocab_build(review_set):
+
+    vocab = Counter()
+
+    for review in review_set:
+        for token in review:
+            vocab[token] += 1
+
+    return vocab
+
+
+def embedding_coverage(review_set, embeddings_dict):
+
+    vocab = vocab_build(review_set)
+
+    covered = {}
+    word_count = {}
+    oov = {}
+    covered_num = 0
+    oov_num = 0
+
+    for word in vocab:
+        try:
+            covered[word] = embeddings_dict[word]
+            covered_num += vocab[word]
+            word_count[word] = vocab[word]
+
+        except:
+            oov[word] = vocab[word]
+            oov_num += oov[word]
+
+    vocab_coverage = len(covered) / len(vocab) * 100
+    text_coverage = covered_num / (covered_num + oov_num) * 100
+
+    return word_count, oov, vocab_coverage, text_coverage
