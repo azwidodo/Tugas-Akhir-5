@@ -31,21 +31,25 @@ def split_train_test(df_pos, df_neg, random_state=None):
 # Plot accuracy and loss of neural network model
 def plot_history(history):
     # Plotting accuracy on training data
-    plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
-    plt.title('model accuracy')
-    plt.ylabel('accuracy')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.plot([i + 1 for i in range(len(history.history["loss"]))],
+             history.history['accuracy'])
+    plt.plot([i + 1 for i in range(len(history.history["loss"]))],
+             history.history['val_accuracy'])
+    plt.title('Model accuracy')
+    plt.ylabel('Accuracy')
+    plt.xlabel('Epoch')
+    plt.legend(['train', 'validation'], loc='upper left')
     plt.show()
 
     # Plotting loss
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
-    plt.title('model loss')
-    plt.ylabel('loss')
-    plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.plot([i + 1 for i in range(len(history.history["loss"]))],
+             history.history['loss'])
+    plt.plot([i + 1 for i in range(len(history.history["loss"]))],
+             history.history['val_loss'])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['train', 'validation'], loc='upper left')
     plt.show()
 
 
