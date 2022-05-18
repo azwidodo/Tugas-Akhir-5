@@ -11,6 +11,7 @@ all_data/ppt_processed.csv
 cleaned_data/cleaned_reviews.csv
 cleaned_data/cleaned_reviews_2.csv
 cleaned_data/cleaned_reviews_3.csv
+cleaned_data/cleaned_reviews_4.csv
 /glove.42B.300d.txt
 /weights.best.hdf5
 /word2vec.model
