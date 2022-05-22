@@ -41,6 +41,8 @@ who
 whom
 why
 where
+whose
+how
 this
 thisll
 that
@@ -68,8 +70,15 @@ an
 the
 and
 if
+in
+on
+between
 or
 because
+but
+however
+so
+then
 as
 of
 at
